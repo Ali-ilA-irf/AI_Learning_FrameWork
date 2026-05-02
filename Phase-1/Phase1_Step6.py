@@ -36,17 +36,23 @@ for row in subset.itertuples(index=False):
     if val_a not in graph[val_b]:
         graph[val_b].append(val_a)
 
-# Print the graph
-print("======== Graph (Adjacency List) ========\n")
-for node, neighbors in graph.items():
-    print(f"  {node} --> {neighbors}")
+def main():
+    # Print the graph
+    print("======== Graph (Adjacency List) ========\n")
+    for node, neighbors in graph.items():
+        print(f"  {node} --> {neighbors}")
 
-# Count nodes and edges
-total_nodes = len(all_nodes)
-total_edges = 0
-for node in graph:
-    total_edges += len(graph[node])
-total_edges = total_edges // 2  # each edge counted twice
+    # Count nodes and edges
+    total_nodes = len(all_nodes)
+    total_edges = 0
+    for node in graph:
+        total_edges += len(graph[node])
+    total_edges = total_edges // 2  # each edge counted twice
 
-print(f"\nTotal Nodes: {total_nodes}")
-print(f"Total Edges: {total_edges}")
+    print(f"\nTotal Nodes: {total_nodes}")
+    print(f"Total Edges: {total_edges}")
+
+if __name__ == '__main__':
+    main()
+
+
